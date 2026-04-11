@@ -15,7 +15,7 @@ function Studio() {
 
   const fetchStudioProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/products/all");
+      const response = await axios.get("https://myntraclone-backend-pcv6.onrender.com/products/all");
       const studioProducts = response.data.filter(product => product.category === "Studio");
       setProducts(studioProducts);
     } catch (err) {
@@ -77,7 +77,7 @@ function Studio() {
                         return;
                       }
                       try {
-                        const res = await fetch('http://localhost:5000/cart/addToCart', {
+                        const res = await fetch('https://myntraclone-backend-pcv6.onrender.com/cart/addToCart', {
                           method: 'POST',
                           headers: {'Content-Type': 'application/json'},
                           body: JSON.stringify({ userId: user._id, productId: product._id })

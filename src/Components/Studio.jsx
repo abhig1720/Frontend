@@ -59,7 +59,7 @@ function Studio() {
               <Link to ={`/product/${product._id}`}key={product._id} className="product-link">
               <div key={product._id} className="product-card">
                 <img 
-                  src={`http://localhost:5000/uploads/${product.image}`} 
+                  src={`https://myntraclone-backend-pcv6.onrender.com/uploads/${product.image}`} 
                   alt={product.name} 
                   className="product-image"
                 />

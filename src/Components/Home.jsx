@@ -10,7 +10,7 @@ function Home() {
   const[loading,setLoading]=useState(true);
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/products/all`)
+    fetch(`https://myntraclone-backend-pcv6.onrender.com/products/all`)
     .then(res=>res.json())
     .then(data=>{
       setAllProducts(data);

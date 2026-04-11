@@ -24,7 +24,7 @@ function ManageUsers() {
 
     const fetchUsers= async()=>{
         try{
-            const response = await axios.get("http://localhost:5000/users/all");
+            const response = await axios.get("https://myntraclone-backend-pcv6.onrender.com/users/all");
             setUsers(response.data);
         }
         catch(error){
@@ -37,7 +37,7 @@ function ManageUsers() {
 
     const handleDelete = async(id)=>{
         try{
-            await axios.delete(`http://localhost:5000/users/delete/${id}`);
+            await axios.delete(`https://myntraclone-backend-pcv6.onrender.com/users/delete/${id}`);
             setUsers(users.filter(user=> user._id!==id));
         }
         catch(error){

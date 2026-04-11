@@ -33,7 +33,7 @@ const Checkout = () => {
 
   const handleRazorpayPayment = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/payment/create-order", {
+      const res = await fetch("https://myntraclone-backend-pcv6.onrender.com/api/payment/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -65,7 +65,7 @@ const Checkout = () => {
   handler: async function (response) {
     alert("Payment Successful ");
 
-    const orderRes = await fetch("http://localhost:5000/orders/placeOrder", {
+      const orderRes = await fetch("http://localhost:5000/orders/placeOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -114,7 +114,7 @@ const Checkout = () => {
     if (paymentMethod === "COD") {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:5000/orders/placeOrder", {
+        const res = await fetch("https://myntraclone-backend-pcv6.onrender.com/orders/placeOrder", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

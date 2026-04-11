@@ -21,7 +21,7 @@ function ManageOrders()
 
   const fetchOrders = async () =>{
     try{
-      const res = await fetch("http://localhost:5000/orders");
+      const res = await fetch("https://myntraclone-backend-pcv6.onrender.com/orders");
       const data = await res.json();
       setOrders(data);
 
@@ -37,7 +37,7 @@ function ManageOrders()
 
   const handleStatusUpdate = async(orderId) =>{
     try{
-      const res = await fetch(`http://localhost:5000/orders/${orderId}/status`,{
+      const res = await fetch(`https://myntraclone-backend-pcv6.onrender.com/orders/${orderId}/status`,{
         method:'PUT',
         headers:{
           'Content-Type':'application/json'

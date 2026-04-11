@@ -32,7 +32,7 @@ const Bag = () => {
   const total = cartItems.reduce((sum, item) => sum + (item.product?.price * item.quantity || 0), 0);
 
   const handleUpdateQty = async (productId, newQty) => {
-    await fetch(`http://localhost:5000/cart/updateCart/${user._id}/${productId}`, {
+    await fetch(`https://myntraclone-backend-pcv6.onrender.com/cart/updateCart/${user._id}/${productId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quantity: newQty })
@@ -41,7 +41,7 @@ const Bag = () => {
   };
 
   const handleRemove = async (productId) => {
-    await fetch(`http://localhost:5000/cart/removeFromCart/${user._id}/${productId}`, { method: 'DELETE' });
+    await fetch(`https://myntraclone-backend-pcv6.onrender.com/cart/removeFromCart/${user._id}/${productId}`, { method: 'DELETE' });
     updateCart();
   };
 
@@ -54,7 +54,7 @@ const Bag = () => {
         <div className="bag-items">
           {cartItems.map((item) => (
             <div key={item.product._id} className="bag-item">
-              <img src={`http://localhost:5000/uploads/${item.product.image}`} alt={item.product.name} />
+              <img src={`https://myntraclone-backend-pcv6.onrender.com/uploads/${item.product.image}`} alt={item.product.name} />
               <div className="item-details">
                 <h3>{item.product.name}</h3>
                 <p>₹{item.product.price} x {item.quantity}</p>

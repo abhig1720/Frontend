@@ -17,7 +17,7 @@ function Beauty() {
 
   const fetchBeautyProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/products/all");
+      const response = await axios.get("https://myntraclone-backend-pcv6.onrender.com/products/all");
       const BeautyProducts = response.data.filter(product => product.category === "Beauty");
       setProducts(BeautyProducts);
     } catch (err) {
@@ -61,7 +61,7 @@ function Beauty() {
              <Link to ={`/product/${product._id}`}key={product._id} className="product-link">
                            <div key={product._id} className="product-card">
                              <img 
-                               src={`http://localhost:5000/uploads/${product.image}`}    alt={product.name}    className="product-image" />
+                               src={`https://myntraclone-backend-pcv6.onrender.com/uploads/${product.image}`}    alt={product.name}    className="product-image" />
                              <div className="product-info">
                                <h3 className="product-name">{product.name}</h3>
                                <p className="product-desc">{product.description}</p>
@@ -74,7 +74,7 @@ function Beauty() {
                                      return;
                                    }
                                    try {
-                        const res = await fetch('http://localhost:5000/cart/addToCart', {
+                        const res = await fetch('https://myntraclone-backend-pcv6.onrender.com/cart/addToCart', {
                           method: 'POST',
                           headers: {'Content-Type': 'application/json'},
                           body: JSON.stringify({ userId: user._id, productId: product._id })

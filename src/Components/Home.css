@@ -1,0 +1,415 @@
+.home-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.festival-banner {
+  background: linear-gradient(135deg, #ff3f6c 0%, #ff6b8a 100%);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.festival-banner h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.festival-banner p {
+  font-size: 1.2rem;
+  margin: 10px 0 0;
+  font-weight: 500;
+}
+
+.categories-section {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categories-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.category-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.category-name {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.deals-section {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.deals-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.deal-card {
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.deal-card:hover {
+  transform: scale(1.02);
+}
+
+.deal-card h3 {
+  font-size: 1.3rem;
+  margin: 0 0 5px;
+  font-weight: 700;
+}
+
+.deal-card p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.brands-section {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brands-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.brand-card {
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover {
+  border-color: #ff3f6c;
+  box-shadow: 0 4px 12px rgba(255, 63, 108, 0.2);
+}
+
+.brand-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 30px 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+  text-align: center;
+  padding: 20px;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.feature p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.home-footer {
+  background-color: #282c3f;
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #ff3f6c;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  padding: 5px 0;
+  color: #a0a3b1;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-section ul li:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #3f4158;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #a0a3b1;
+  font-size: 0.85rem;
+}
+
+.carousel-container {
+  width: 100%;
+}
+
+.carousel-slide {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.carousel-content {
+  color: white;
+}
+
+.carousel-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.carousel-subtitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.carousel-text {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+
+}
+.products-section{
+  padding:20px;
+  background-color:white;
+  margin:20px;
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.products-section h2{
+  font-size:1.5rem;
+  margin-bottom:20px;
+  color:#333;
+  font-weight:600;
+}
+
+.products-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap:20px;
+}
+
+.products-card{
+  border: 1px solid;
+  border-radius: 12px;
+  padding:15px;
+  text-align: center;
+  transition: transform 0.3s ease,box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-link:hover .product-card {
+  transform:translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.product-card h3{
+  font-size:1.1rem;
+  margin: 10px 0;
+  color:#333;
+}
+
+.product-price{
+  font-size: 1.3rem;
+  font-weight: 700;
+  color:#ff3f6c;
+  margin: 5px,0;
+}
+.product-category{
+  color:#888;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .deals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .features-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .festival-banner h1 {
+    font-size: 1.8rem;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .carousel-slide {
+    height: 200px;
+  }
+  
+  .carousel-title {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-subtitle {
+    font-size: 1.2rem;
+  }
+  .products-grid{
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 15px;
+  }
+}
+

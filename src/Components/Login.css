@@ -1,0 +1,85 @@
+.login-page {
+  background: #fde8e8;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 400px;
+  background: white;
+}
+
+.login-banner {
+  width: 100%;
+}
+
+.login-content {
+  padding: 30px;
+}
+
+.login-content h2 {
+  margin-bottom: 20px;
+}
+
+.login-content span {
+  font-weight: normal;
+}
+
+.mobile-input {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.mobile-input input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.terms {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.pink {
+  color: #ff3f6c;
+  font-weight: 600;
+}
+
+.signup-link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #ff3f6c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #ff3f6c;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.help {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.help span {
+  color: #ff3f6c;
+  font-weight: 600;
+}

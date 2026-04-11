@@ -1,0 +1,79 @@
+.checkout {
+display: flex;
+gap: 20px;
+padding: 20px;
+background: #f5f5f6;
+}
+
+.checkout-left {
+flex: 2;
+background: white;
+padding: 20px;
+border-radius: 8px;
+}
+
+.checkout-right {
+flex: 1;
+background: white;
+padding: 20px;
+border-radius: 8px;
+height: fit-content;
+}
+
+.address-box input,
+.address-box textarea {
+width: 100%;
+margin: 8px 0;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.payment-box {
+margin: 10px 0;
+}
+
+.items {
+margin-top: 10px;
+}
+
+.item {
+display: flex;
+gap: 10px;
+margin-bottom: 10px;
+}
+
+.item img {
+width: 70px;
+height: 90px;
+object-fit: cover;
+}
+
+.price-row {
+display: flex;
+justify-content: space-between;
+margin: 10px 0;
+}
+
+.total {
+font-size: 18px;
+}
+
+button {
+width: 100%;
+background: #ff3f6c;
+color: white;
+border: none;
+padding: 12px;
+margin-top: 15px;
+cursor: pointer;
+font-weight: bold;
+}
+
+.StripeElement {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+}

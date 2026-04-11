@@ -24,7 +24,7 @@ function ManageProducts() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/products/all");
+      const response = await axios.get("https://myntraclone-backend-pcv6.onrender.com/products/all");
       setProducts(response.data);
     } catch (error) {
       console.error("Failed to fetch products");
@@ -36,7 +36,7 @@ function ManageProducts() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        await axios.delete(`http://localhost:5000/products/delete/${id}`);
+        await axios.delete(`https://myntraclone-backend-pcv6.onrender.com/products/delete/${id}`);
         fetchProducts();
       } catch (error) {
         console.error("Failed to delete product");
@@ -53,7 +53,7 @@ function ManageProducts() {
       description: product.description,
       image: null
     });
-    setPreviewImage(`http://localhost:5000/uploads/${product.image}`);
+    setPreviewImage(`https://myntraclone-backend-pcv6.onrender.com/uploads/${product.image}`);
     setEditModal(true);
   };
 
@@ -78,7 +78,7 @@ function ManageProducts() {
       data.append("image", formData.image);
     }
     try {
-      await axios.put(`http://localhost:5000/products/${selectedProduct._id}`, data, {
+      await axios.put(`https://myntraclone-backend-pcv6.onrender.com/products/${selectedProduct._id}`, data, {
         headers: { "Content-Type": "multipart/form-data" }
       });
       setEditModal(false);
@@ -115,7 +115,7 @@ function ManageProducts() {
           <tbody>
             {products.map((product) => (
               <tr key={product._id}>
-                <td><img src={`http://localhost:5000/uploads/${product.image}`} alt={product.name} width="50" /></td>
+                <td><img src={`https://myntraclone-backend-pcv6.onrender.com/uploads/${product.image}`} alt={product.name} width="50" /></td>
                 <td>{product.name}</td>
                 <td>{product.category}</td>
                 <td>Rs   {product.price}</td>

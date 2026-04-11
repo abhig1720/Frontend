@@ -41,7 +41,7 @@ const Bag = () => {
   };
 
   const handleRemove = async (productId) => {
-    await fetch(`http://localhost:5000/cart/removeFromCart/${user._id}/${productId}`, { method: 'DELETE' });
+    await fetch(`https://myntraclone-backend-pcv6.onrender.com/cart/removeFromCart/${user._id}/${productId}`, { method: 'DELETE' });
     updateCart();
   };
 

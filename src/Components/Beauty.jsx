@@ -17,9 +17,9 @@ function Beauty() {
 
   const fetchBeautyProducts = async () => {
     try {
-      const response = await axios.get("https://myntraclone-backend-pcv6.onrender.com/products/all");
+      const response = await axios.get("https://myntraclone-backend-pcv6.onrender.com/all");
       const BeautyProducts = response.data.filter(product => product.category === "Beauty");
-      setProducts(BeautyProducts);
+      setProducts(BeautyProducts);    
     } catch (err) {
       setError("Failed to load products");
       console.error(err);

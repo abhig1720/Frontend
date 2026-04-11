@@ -75,7 +75,7 @@ function Home() {
         {allProducts.map((product)=>(
           <Link to={`/product/${product._id}`} key={product._id} className="product-link">
             <div  className="product-card">
-              <img src={`http://localhost:5000/uploads/${product.image}`} alt={product.name} className="product-image"/>
+              <img src={`https://myntraclone-backend-pcv6.onrender.com/uploads/${product.image}`} alt={product.name} className="product-image"/>
               <h3>{product.name}</h3>
               <p className="product-price">₹{product.price}</p>
               <p className="product-category">{product.category}</p>

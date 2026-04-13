@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "./Carousel";
 
-import "./home.css";
+import "./Home.css";
 
 function Home() {
 

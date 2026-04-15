@@ -65,7 +65,7 @@ const Checkout = () => {
   handler: async function (response) {
     alert("Payment Successful ");
 
-    const orderRes = await fetch("http://localhost:5000/orders/placeOrder", {
+    const orderRes = await fetch("https://myntraclone-backend-pcv6.onrender.com/orders/placeOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -29,7 +29,7 @@ export const UserProvider = ({ children }) => {
 
   const fetchCart = async (userId) => {
     try {
-      const res = await fetch(`http://localhost:5000/cart/${userId}`);
+      const res = await fetch(`https://myntraclone-backend-pcv6.onrender.com/cart/${userId}`);
       if (res.ok) {
         const data = await res.json();
         setCartItems(data || []);

@@ -1,13 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminDashboard.css";
+import Dashboard from "./Dashboard";
 
 function AdminDashboard(){
     const navigate = useNavigate();
+    
     const handleLogout=()=>{
         localStorage.removeItem("isAdmin");
         navigate("/admin-login");
     }
+
+    const handleNavigate = (page) => {
+        if (page === "Manage Products") navigate("/admin/manage-products");
+        if (page === "Manage Orders") navigate("/admin/manage-orders");
+        if (page === "Manage Users") navigate("/admin/users");
+        if (page === "Add Product") navigate("/admin/products");
+    };
 
     return(
         <div className="admin-dashboard-container">
@@ -20,6 +29,9 @@ function AdminDashboard(){
                     <span onClick={()=> navigate("/admin/users")}>Manage Users</span>
                     <span onClick={handleLogout}>Logout</span>
                 </div>
+            </div>
+            <div className="admin-dashboard-content">
+                <Dashboard setActivePage={handleNavigate} />
             </div>
         </div>
     );

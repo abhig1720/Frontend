@@ -1,13 +1,25 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useUser } from "../contexts/UserContext";
 import "./Navbar.css";
 
 function Navbar() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const { user, cartItems, logout } = useUser();
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      if (searchQuery.trim()) {
+        navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      } else {
+        navigate("/search");
+      }
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -24,7 +36,14 @@ function Navbar() {
       </div>
 
       <div className="nav-center">
-        <input type="text" placeholder="Search for products, brands and more" className="search-input"  />
+        <input 
+          type="text" 
+          placeholder="Search for products, brands and more" 
+          className="search-input"  
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyDown={handleSearch}
+        />
       </div>
 
       <div className="nav-right">

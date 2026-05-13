@@ -6,7 +6,7 @@ import './MyOrders.css';
 
 const ORDERS_PER_PAGE = 5;
 
-// ─── Helpers ────────────────────────────────────────────
+
 const formatDate = (iso) =>
   new Date(iso).toLocaleDateString('en-US', {
     year: 'numeric', month: 'short', day: 'numeric',
@@ -14,16 +14,15 @@ const formatDate = (iso) =>
 
 const statusClass = (status) => {
   const map = {
-    'pending':            'status-placed',
-    'confirmed':        'status-processing',
-    'shipped':  'status-out-for-delivery',
-    'delivered':         'status-delivered',
-    'cancelled':         'status-cancelled',
+    'pending': 'status-placed',
+    'confirmed': 'status-processing',
+    'shipped': 'status-out-for-delivery',
+    'delivered': 'status-delivered',
+    'cancelled': 'status-cancelled',
   };
   return map[status] || 'status-placed';
 };
 
-// ─── Skeleton Card ───────────────────────────────────────
 const SkeletonCard = () => (
   <div className="skeleton-card">
     <div className="skeleton-line" style={{ height: 14, width: '40%' }} />
@@ -39,14 +38,13 @@ const SkeletonCard = () => (
   </div>
 );
 
-// ─── Order Card ──────────────────────────────────────────
 const OrderCard = ({ order, onReorder }) => {
   const VISIBLE_ITEMS = 3;
   const extraCount = order.items.length - VISIBLE_ITEMS;
 
   return (
     <div className="order-card">
-      {/* Header */}
+      { }
       <div className="order-card-header">
         <div className="order-meta">
           <span className="order-id">Order #{order._id.toString().slice(-8).toUpperCase()}</span>
@@ -57,7 +55,7 @@ const OrderCard = ({ order, onReorder }) => {
         </span>
       </div>
 
-      {/* Body — product list */}
+      { }
       <div className="order-card-body">
         <div className="order-items-list">
           {order.items.slice(0, VISIBLE_ITEMS).map((item, idx) => (
@@ -90,7 +88,7 @@ const OrderCard = ({ order, onReorder }) => {
         )}
       </div>
 
-      {/* Footer */}
+      { }
       <div className="order-card-footer">
         <div className="order-total">
           Total: <span>Rs {order.totalAmount?.toLocaleString()}</span>
@@ -109,7 +107,7 @@ const OrderCard = ({ order, onReorder }) => {
   );
 };
 
-// ─── Main Page ───────────────────────────────────────────
+
 const MyOrders = () => {
   const { user, updateCart } = useUser();
   const navigate = useNavigate();
@@ -121,13 +119,13 @@ const MyOrders = () => {
   const [page, setPage] = useState(1);
   const [toast, setToast] = useState(null);
 
-  // ── Toast helper
+
+
   const showToast = useCallback((msg, type = 'success') => {
     setToast({ msg, type });
     setTimeout(() => setToast(null), 3000);
   }, []);
 
-  // ── Fetch orders
   useEffect(() => {
     const fetchOrders = async () => {
       if (!user) {
@@ -138,7 +136,6 @@ const MyOrders = () => {
         const res = await fetch("https://myntraclone-backend-pcv6.onrender.com/orders");
         if (res.ok) {
           const data = await res.json();
-          // Filter to only show the current logged-in user's orders
           const userOrders = data.filter(order => order.userId && order.userId._id === user._id);
           setOrders(userOrders);
         } else {
@@ -153,7 +150,6 @@ const MyOrders = () => {
     fetchOrders();
   }, [user]);
 
-  // ── Client-side search
   const filtered = orders.filter((o) => {
     const q = search.toLowerCase();
     if (!q) return true;
@@ -163,20 +159,20 @@ const MyOrders = () => {
     );
   });
 
-  // Reset page on search
+
   useEffect(() => setPage(1), [search]);
 
   const totalPages = Math.ceil(filtered.length / ORDERS_PER_PAGE);
   const paginated = filtered.slice((page - 1) * ORDERS_PER_PAGE, page * ORDERS_PER_PAGE);
 
-  // ── Reorder handler
+
   const handleReorder = async (items) => {
     if (!user) return;
     try {
       for (const item of items) {
         await fetch('https://myntraclone-backend-pcv6.onrender.com/cart/addToCart', {
           method: 'POST',
-          headers: {'Content-Type': 'application/json'},
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId: user._id, productId: item.product._id })
         });
       }
@@ -191,18 +187,18 @@ const MyOrders = () => {
   if (!user) {
     return (
       <div className="my-orders-page">
-         <div className="my-orders-empty">
-            <h2>Please login to view your orders</h2>
-            <button onClick={() => navigate("/login")} className="btn-reorder" style={{padding: '10px 20px', marginTop: '20px'}}>Login</button>
-         </div>
+        <div className="my-orders-empty">
+          <h2>Please login to view your orders</h2>
+          <button onClick={() => navigate("/login")} className="btn-reorder" style={{ padding: '10px 20px', marginTop: '20px' }}>Login</button>
+        </div>
       </div>
     );
   }
 
-  // ── Render
+
   return (
     <div className="my-orders-page">
-      {/* Toast notification */}
+      { }
       {toast && (
         <div
           style={{
@@ -219,7 +215,7 @@ const MyOrders = () => {
       )}
 
       <div className="my-orders-container">
-        {/* Header */}
+        { }
         <div className="my-orders-header">
           <h1>My <span>Orders</span></h1>
           {!loading && orders.length > 0 && (
@@ -236,7 +232,7 @@ const MyOrders = () => {
           )}
         </div>
 
-        {/* Loading skeletons */}
+        { }
         {loading && (
           <>
             <SkeletonCard />
@@ -245,14 +241,14 @@ const MyOrders = () => {
           </>
         )}
 
-        {/* Error */}
+        { }
         {!loading && error && (
           <div style={{ background: '#fee2e2', color: '#b91c1c', padding: '16px 20px', borderRadius: 10 }}>
             {error}
           </div>
         )}
 
-        {/* Empty state */}
+        { }
         {!loading && !error && filtered.length === 0 && (
           <div className="my-orders-empty">
             <span className="empty-icon">
@@ -260,11 +256,11 @@ const MyOrders = () => {
             </span>
             <h2>{search ? 'No matching orders found.' : "You haven't placed any orders yet."}</h2>
             <p>{search ? 'Try a different search term.' : 'Your purchase history will appear here once you place an order.'}</p>
-            {!search && <Link to="/" style={{color: '#ff3f6c', textDecoration: 'none', fontWeight: 'bold', marginTop: '10px', display: 'inline-block'}}>Start Shopping</Link>}
+            {!search && <Link to="/" style={{ color: '#ff3f6c', textDecoration: 'none', fontWeight: 'bold', marginTop: '10px', display: 'inline-block' }}>Start Shopping</Link>}
           </div>
         )}
 
-        {/* Order Cards */}
+        { }
         {!loading && !error && paginated.length > 0 && (
           <>
             {paginated.map((order) => (
@@ -275,7 +271,7 @@ const MyOrders = () => {
               />
             ))}
 
-            {/* Pagination */}
+            { }
             {totalPages > 1 && (
               <div className="pagination">
                 <button onClick={() => setPage((p) => p - 1)} disabled={page === 1}>

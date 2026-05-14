@@ -62,7 +62,7 @@ const OrderCard = ({ order, onReorder }) => {
             <div key={idx} className="order-item-row">
               {item.product?.image ? (
                 <img
-                  src={`https://myntraclone-backend-pcv6.onrender.com/uploads/${item.product.image}`}
+                  src={`http://localhost:3002/uploads/${item.product.image}`}
                   alt={item.product?.name || "Product"}
                   className="order-item-img"
                   loading="lazy"
@@ -133,7 +133,7 @@ const MyOrders = () => {
         return;
       }
       try {
-        const res = await fetch("https://myntraclone-backend-pcv6.onrender.com/orders");
+        const res = await fetch("http://localhost:3002/orders");
         if (res.ok) {
           const data = await res.json();
           const userOrders = data.filter(order => order.userId && order.userId._id === user._id);
@@ -170,7 +170,7 @@ const MyOrders = () => {
     if (!user) return;
     try {
       for (const item of items) {
-        await fetch('https://myntraclone-backend-pcv6.onrender.com/cart/addToCart', {
+        await fetch('http://localhost:3002/cart/addToCart', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId: user._id, productId: item.product._id })

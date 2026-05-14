@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import "./Dashboard.css";
 
-const API_BASE = "https://myntraclone-backend-pcv6.onrender.com";
+const API_BASE = "http://localhost:3002";
 export default function Dashboard({ setActivePage }) {
     const [stats, setStats] = useState({
         products: 0,

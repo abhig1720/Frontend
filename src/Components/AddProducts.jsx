@@ -36,7 +36,7 @@ function AddProducts(){
         data.append("description",formData.description);
         data.append("image",formData.image);
         try{
-            await axios.post("https://myntraclone-backend-pcv6.onrender.com/products/add",data,{
+            await axios.post("http://localhost:3002/products/add",data,{
                 headers:{"Content-Type":"multipart/form-data"}
             });
             alert("products added");

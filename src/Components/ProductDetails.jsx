@@ -9,7 +9,7 @@ function ProductDetails(){
     const { user, updateCart } = useUser();
 
     useEffect(()=>{
-        fetch(`https://myntraclone-backend-pcv6.onrender.com/products/${id}`)
+        fetch(`http://localhost:3002/products/${id}`)
         .then((res)=>res.json())
         .then((data)=>setProduct(data))
         .catch((err)=>console.log(err));
@@ -22,7 +22,7 @@ function ProductDetails(){
         <div className="product-details">
              <div className="details-image">
   <img 
-    src={`https://myntraclone-backend-pcv6.onrender.com/uploads/${product.image}`} 
+    src={`http://localhost:3002/uploads/${product.image}`} 
     alt={product.name} 
   />
 </div>
@@ -44,7 +44,7 @@ function ProductDetails(){
   console.log("PRODUCT:", product);
   console.log("PRODUCT ID:", product?._id);
                     try {
-                      const res = await fetch('https://myntraclone-backend-pcv6.onrender.com/cart/addToCart', {
+                      const res = await fetch('http://localhost:3002/cart/addToCart', {
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({ userId: user._id, productId: product._id })

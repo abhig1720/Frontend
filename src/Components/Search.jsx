@@ -35,7 +35,7 @@ export default function Search() {
         const fetchAllProducts = async () => {
             setLoading(true);
             try {
-                const res = await fetch("https://myntraclone-backend-pcv6.onrender.com/products/all");
+                const res = await fetch("http://localhost:3002/products/all");
                 if (res.ok) {
                     const data = await res.json();
                     setAllProducts(data || []);
@@ -106,7 +106,7 @@ export default function Search() {
         }
 
         try {
-            const res = await fetch('https://myntraclone-backend-pcv6.onrender.com/cart/addToCart', {
+            const res = await fetch('http://localhost:3002/cart/addToCart', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ userId: user._id, productId: product._id })
@@ -172,7 +172,7 @@ export default function Search() {
                                         <div className="search-product-card">
                                             <div className="search-product-image">
                                                 {product.image ? (
-                                                    <img src={`https://myntraclone-backend-pcv6.onrender.com/uploads/${product.image}`} alt={product.name} />
+                                                    <img src={`http://localhost:3002/uploads/${product.image}`} alt={product.name} />
                                                 ) : (
                                                     <div className="no-image">No Image</div>
                                                 )}

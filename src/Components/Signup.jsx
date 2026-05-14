@@ -32,7 +32,7 @@ function Signup() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://myntraclone-backend-pcv6.onrender.com/signup",{
+      const response = await fetch("http://localhost:3002/signup",{
         method:"POST",
         headers:{
           "Content-Type":"application/json",
